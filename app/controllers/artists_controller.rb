@@ -9,9 +9,24 @@ class ArtistsController < ApplicationController
 
   end
 
+  def update
+     # @post = Post.find(params[:id])
+     # @schoolclass = SchoolClass.find(params[:id])
+    #  @student = Student.find(params[:id])
+     @artist = Artist.find(params[:id])
+
+
+     # @post.update(title: params[:title], description: params[:description])
+     @artist.update(artist_params(:name, :bio))
+     #
+     # redirect_to post_path(@post)
+     redirect_to artist_path(@artist)
+
+   end
+
   def edit
     @artist = Artist.find(params[:id])
-    
+
   end
 
   def create
